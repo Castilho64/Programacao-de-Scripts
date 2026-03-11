@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01 - Aula 03</title>
+    <script type ="text/javascript">
+
+        let num1 = parseInt(prompt('Informe o Número 1: '));
+        let num2 = parseInt(prompt('Informe o Número 2: '));
+        let opr = prompt('Informe uma operação matemática: ').toUpperCase()
+
+        if(isNaN(num1) || isNaN(num2)){ //Se não for um número na Nota 1 ou Nota 2
+            document.write('Informe apenas números!')
+        } 
+        else{
+            switch(opr){
+                case 'SOMA': 
+                case '+':
+                soma = num1 + num2
+                document.write(`A SOMA dos números ${num1} e ${num2} é: ${soma}`)
+                    break
+                case 'SUBTRAÇÃO': 
+                case '-':
+                sub = num1 - num2
+                document.write(`A SUBTRAÇÃO dos números ${num1} e ${num2} é: ${sub}`)
+                    break
+                case 'MULTIPLICAÇÃO':
+                case '*':
+                multi = num1 * num2
+                document.write(`A SUBTRAÇÃO dos números ${num1} e ${num2} é: ${multi}`)
+                    break
+                case 'DIVISÃO': 
+                case '/':
+                    if (num2 == 0) {
+                        document.write("Erro: não é possível dividir por 0.");
+                    } else {
+                        div = num1 / num2
+                        document.write(`A DIVISÃO dos números ${num1} e ${num2} é: ${div}`)
+                    }
+                    break
+                default: //Seria como se fosse o ELSE
+                document.write(`${opr} não identificada!`)
+            }
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
