@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 04</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let nota1 = parseFloat(prompt('Informe a primeira nota: '))
+        let nota2 = parseFloat(prompt('Informe a segunda nota: '))
+        if(isNaN(nota1) || isNaN(nota2)){ //Se não for um número na Nota 1 ou Nota 2
+            document.write('Informe apenas números!')
+        } 
+        else{
+            let media = (nota1 + nota2) / 2
+            document.write(`A média é: ${media}`)
+        }
+        document.write('<br>') //Para quebrar a linha
+
+        let cidade = prompt('Informe uma cidade: ').toUpperCase() //Para colocar tudo em maíuscula. Outro método: cidade = cidade.toUpperCase()
+        
+       /*if (cidade == 'TAQUARITINGA'){
+            document.write(`${cidade} é conhecida pelo seu Carnaval.`)
+        }else if(cidade == 'MONTE ALTO'){
+            document.write(`${cidade} é conhecida pelo seu Museu.`)
+        }else if(cidade == 'MATAO' || cidade == 'MATÃO'){
+            document.write(`${cidade} é conhecida pelas suas indústrias.`)
+        }else if(cidade == 'DOBRADA'){
+            document.write(`${cidade} é conhecida pelas lombadas.`)
+        }else{
+            document.write(`${cidade} não identificada!`)
+        }*/
+
+        switch (cidade){ //Switch é para testar variáveis
+            case 'TAQUARITINGA':
+                document.write(`${cidade} é conhecida pelo seu Carnaval.`)
+                break //Vai sair do Switch
+            case 'MONTE ALTO':
+                document.write(`${cidade} é conhecida pelo seu Museu.`)
+                break
+            case 'MATAO':
+            case 'MATÃO': 
+                document.write(`${cidade} é conhecida pelas suas indústrias.`)
+                break
+            case 'DOBRADA': 
+                document.write(`${cidade} é conhecida pelas lombadas.`)
+                break
+            default: //Seria como se fosse o ELSE
+                document.write(`${cidade} não identificada!`)
+                //Break seria opcional mas não há necessidade
+        }
+
+        /*document.write('<br>')
+        document.write((cidade == 'TAQUARITINGA' || cidade == 'MATÃO') ? 'Possui Fatec': 'Outra instituição')*/ //Para testes de IF rápidos
+    </script>
+</body>
+</html>
