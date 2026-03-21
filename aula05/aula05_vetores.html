@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetores e Estruturas de Repetição</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let listasBandas = []
+        listasBandas.push('Kiss')
+        listasBandas.push('Metallica', 'Megadeth')
+        listasBandas.push('Avenged Sevenfold')
+        listasBandas.push('Linkin Park', 'Slipknot')
+
+        // Mostrando um elemento específico pelo índice
+        {
+            document.write('<b>Elemento no índice 0:</b><br>' + listasBandas[0] + '<br><br>')
+        }
+
+        // Mostrando o tamanho do vetor
+        {
+            document.write('<b>Total de bandas:</b><br>' + listasBandas.length + '<br><br>')
+        }
+
+        // Substituindo um elemento pelo índice
+        {
+            let listaTemp = [...listasBandas] // Copia o vetor para não alterar o original
+            listaTemp[0] = 'Nirvana'
+            document.write('<b>Substituindo índice 0 por Nirvana:</b><br>' + listaTemp.join('<br>') + '<br><br>')
+        }
+
+        // Removendo um elemento com splice
+        {
+            let listaTemp = [...listasBandas] // Copia o vetor para não alterar o original
+            listaTemp.splice(2, 1) // Remove 1 elemento a partir do índice 2
+            document.write('<b>Removendo elemento no índice 2:</b><br>' + listaTemp.join('<br>') + '<br><br>')
+        }
+
+        // for clássico
+        {
+            let conteudo = ''
+            for (let i = 0; i < listasBandas.length; i++){
+                conteudo += listasBandas[i] + '<br>'
+            }
+            document.write('<b>For clássico:</b><br>' + conteudo + '<br>')
+        }
+
+        // for...in
+        {
+            let conteudo = ''
+            for (let i in listasBandas){
+                conteudo += listasBandas[i] + '<br>'
+            }
+            document.write('<b>For...in:</b><br>' + conteudo + '<br>')
+        }
+
+        // while
+        {
+            let conteudo = ''
+            let i = 0
+            while (i < listasBandas.length){
+                conteudo += listasBandas[i] + '<br>'
+                i++
+            }
+            document.write('<b>While:</b><br>' + conteudo + '<br>')
+        }
+
+        // do...while
+        {
+            let conteudo = ''
+            let i = 0
+            do {
+                conteudo += listasBandas[i] + '<br>'
+                i++
+            } while (i < listasBandas.length)
+            document.write('<b>Do...while:</b><br>' + conteudo + '<br>')
+        }
+
+    </script>
+</body>
+</html>
