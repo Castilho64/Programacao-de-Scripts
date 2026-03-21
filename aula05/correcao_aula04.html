@@ -1,0 +1,56 @@
+<!--Correção do exercício da aula 04 - Calculadora Simples-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correção do Exercício</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let continuar = true;
+ 
+        while (continuar) {
+ 
+            let num1 = parseFloat(prompt('Informe o número 1: '))
+            let num2 = parseFloat(prompt("Informe o número 2: "))
+ 
+            if (isNaN(num1) || isNaN(num2)) {
+                document.write('Informe apenas números!<br>')
+            } else {
+                let operacao = prompt('Informe a operação (+, -, *, /)')
+                let resultado
+ 
+                switch (operacao) {
+                    case '+': 
+                        resultado = num1 + num2
+                        break
+                    case '-':
+                        resultado = num1 - num2
+                        break
+                    case '*':
+                        resultado = num1 * num2
+                        break
+                    case '/':
+                        while (num2 == 0) { // Verifica se o número 2 é 0 para evitar divisão por zero. Enquanto o número 2 for 0, solicita um novo número.
+                            num2 = parseFloat(prompt('Número 2 não pode ser 0. Informe outro número:'))
+                        }
+                        resultado = num1 / num2
+                        break
+                    default:
+                        resultado = 'Operação Inválida!'
+                }
+ 
+                document.write(`Resultado: ${resultado}<br>`)
+            }
+ 
+            let resposta = prompt("Deseja realizar outra operação? (s/n)")
+ 
+            if (resposta.toLowerCase() !== 's') {
+                continuar = false
+                document.write("<br>Fim.")
+            }
+        }
+    </script>
+</body>
+</html>
