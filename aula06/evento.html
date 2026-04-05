@@ -6,21 +6,39 @@
     <title>Aula 06 - Evento</title>
     <script type = "text/javascript">
 
+        // Converte Reais para Dólar (divide o valor pelo preço do dólar)
         function convertReaisparaDolar(valor, dolar){
             return 'US$ ' + (valor / dolar).toFixed(2).replace('.',',') + '<br>'
         }
+
+        // Converte Dólar para Reais (multiplica o valor pelo preço do dólar)
         function convertDolarparaReal(dolar, valor){
-            return 'R$ ' + (dolar / valor).toFixed(2).replace('.', ',') + '<br>'
+            return 'R$ ' + (dolar * valor).toFixed(2).replace('.', ',') + '<br>'
         }
 
+        // Aguarda o carregamento completo da página para ligar o evento ao botão
         window.onload = function (){
             document.getElementById('btn_converter').onclick = function(){
+
+                // Captura os valores dos campos da página
                 let dolar = document.getElementById('dolar').value 
                 let valor = document.getElementById('valor').value
-                let resultado = convertReaisparaDolar(valor, dolar)
+                let tipo = document.getElementById('tipo').value // Captura a opção selecionada (1 ou 2)
+
+                let resultado = ''
+
+                // Verifica qual conversão foi selecionada e chama a função correspondente
+                if(tipo == '1'){
+                    resultado = convertReaisparaDolar(valor, dolar) // Opção 1: Real → Dólar
+                } else {
+                    resultado = convertDolarparaReal(dolar, valor)  // Opção 2: Dólar → Real
+                }
+
+                // Exibe o resultado na página
                 document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado
             }
         }//Função ligada com Evento
+
     </script>
 </head>
 <body>
