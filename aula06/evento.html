@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Evento</title>
+    <script type = "text/javascript">
+
+        function convertReaisparaDolar(valor, dolar){
+            return 'US$ ' + (valor / dolar).toFixed(2).replace('.',',') + '<br>'
+        }
+        function convertDolarparaReal(dolar, valor){
+            return 'R$ ' + (dolar / valor).toFixed(2).replace('.', ',') + '<br>'
+        }
+
+        window.onload = function (){
+            document.getElementById('btn_converter').onclick = function(){
+                let dolar = document.getElementById('dolar').value 
+                let valor = document.getElementById('valor').value
+                let resultado = convertReaisparaDolar(valor, dolar)
+                document.getElementById('resultado').innerHTML = 'Resultado: ' + resultado
+            }
+        }//Função ligada com Evento
+    </script>
+</head>
+<body>
+    <h1>Conversão Real / Dolar</h1>
+    <b>Dólar: </b><input type="number" id="dolar" value = "5.19"><br><br>
+    <b>Valor: </b><input type="number" id="valor"><br><br>
+    <!--button onclick="alert('Ok')">Converter</!--button-->
+    <select id="tipo">
+        <option value="1">Real para Dólar</option>
+        <option value="2">Dólar para Real</option>
+    </select>
+    <button id="btn_converter">Converter</button>
+    <p><b id="resultado">Resultado: </b></p>
+</body>
+</html>
