@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Função</title>
+    <script type = "text/javascript">
+        let cot_dolar = 5.19
+        /*let valor1 = (100 / cot_dolar).toFixed(2).replace('.',',')
+        let valor2 = (200 / cot_dolar).toFixed(2).replace('.',',')
+        let valor3 = (500 / cot_dolar).toFixed(2).replace('.',',')
+        let valor4 = (1000 / cot_dolar).toFixed(2).replace('.',',')
+        document.write(`${valor1} <br>`)
+        document.write(`${valor2} <br>`)
+        document.write(`${valor3} <br>`)
+        document.write(`${valor4} <br>`)*/
+
+        function convertReaisparaDolar(valor, dolar){
+            return 'US$ ' + (valor / dolar).toFixed(2).replace('.',',') + '<br>'
+        } //Forma Indepedente
+
+        function convertRealDolar(valor, dolar){
+            document.write('US$ ' + (valor / dolar).toFixed(2).replace('.',',') + '<br>')
+        } //Forma vinculada ao Document.Write
+
+        document.write(convertReaisparaDolar(10000, cot_dolar))
+        document.write(convertReaisparaDolar(12000, cot_dolar))
+        document.write(convertReaisparaDolar(15000, cot_dolar))
+
+        convertRealDolar(10, cot_dolar)
+        convertRealDolar(50, cot_dolar)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
